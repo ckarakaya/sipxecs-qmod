@@ -25,6 +25,12 @@
     </condition>
   </extension>
 #end
+  <extension name="ECHO">
+     <condition field="destination_number" expression="^(ECHO)$">
+     <action application="answer"/>
+     <action application="echo" data=""/>
+     </condition>
+  </extension>
 #foreach($extension in $freeswitchExtensions)
   <extension name="${extension.name}">
 #foreach($condition in $extension.conditions)
